@@ -1,1 +1,1 @@
-puts "God save the Queen"
+puts "Gloria in excelsis Deo et in terra pax hominibus bonae voluntatis!"
