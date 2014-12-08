@@ -48,16 +48,21 @@ end
 def aggregate_stories
 	stories = []				#create a container for all stories
 	story = get_story			#get one story and create a hash
-	stories.push(story) 			#pass has into stories array
-	#need to know when to stop calling get_story. Is there another story? write a conditional
+	stories.push(story) 		#pass has into stories array
 	puts "Do you have another story to add? Please type yes or no."
-	until gets.strip == "no"
-		story = get_story
-		stories.push(story)
-		puts "Do you have another story to add? Please type yes or no."
+	answer = gets.strip
+	until answer == "no"
+		if answer == "yes"
+			story = get_story
+			stories.push(story)
+			puts "Do you have another story to add? Please type yes or no."
+		else
+			puts "Please enter either yes or no."
+		end
+		answer = gets.strip
 	end
-	print_news_feed(stories)
-			#print all stories
+	print_news_feed(stories)	#print all stories
+			
 
 
 	#call get_story until someone says 'no' or otherwise signals "no more stories"
