@@ -11,9 +11,11 @@
 #3 -  Save every story to/in a collection 
 #4 -  Print each stories title, category and upvotes to the screen
 
-# Build things by refactoring - create the basic code, then create it in a method, call the method, etc.
+# Note for TAs: Hey there,
+# I'm unsure why my list compiles in the opposite order from how it's inputed by the user. 
+# If there's a way to change that, I'd be interested in knowing what I might change in my code to reflect that.
 
-# gets info from the user, then passing info into next method, calls the next method, determine_upvotes
+# Gets info from the user, then passing info into next method, calls the next method, get_upvotes
 def get_story
 	puts "Please provide a story title: \n" 
 	title = gets.strip 
