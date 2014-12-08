@@ -16,9 +16,9 @@ require 'colorize'
 #4 -  Print each stories title, category and upvotes to the screen
 
 def get_story
-  puts "Please provide a story title: ".green
+  puts "Please provide a story title: "
   title = gets.chomp
-  puts "Please provide a category: ".green
+  puts "Please provide a category: "
   category = gets.strip
   determine_upvotes(title, category) 
 end
@@ -55,19 +55,18 @@ def print_news_feed(stories)
 end
 
 def prompt_tell_story(stories)
-  y = "yes".red
-  n = "no".red
+  ask = '(' + "yes".green + "/" + "no".red + '):'
 
-  puts "Do you want to tell another story (".green + y.red + "/".green + n.red + "):".green
+  puts "Do you want to tell another story #{ask}"
   answer = gets.chomp
   answer.downcase!
   if answer == 'yes'
     get_stories(stories)
   elsif answer == 'no'
-    puts "Here's the complete list of stories you told:"
+    puts; puts "Here's the complete list of stories you told:"
     puts; print_news_feed(stories); puts
   else
-    print "Sorry, I didn't catch that. ".green
+    print "Sorry, I didn't catch that. "
     prompt_tell_story(stories)
   end
 end
