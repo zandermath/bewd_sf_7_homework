@@ -16,6 +16,7 @@ def get_story_title
 	puts "Please tell me the title of your favorite story?"
 	story_title = gets.chomp
 	story_title.downcase!
+	return story_title
 end
 
 def get_category
@@ -23,6 +24,22 @@ def get_category
 	puts "Please tell me the category of the story (ex. Adventure, Drama etc."
 	category = gets.chomp
 	category.downcase!
+	return category
+end
+
+def get_upvotes (category)
+	if category == "drama"
+		upvote = 1
+	elsif category == "action"
+		upvote = 2
+	elsif category == "comedy"
+		upvote = 3
+	elsif category == "adventure"
+		upvote = 2
+	else 
+		upvote = 0
+	end
+	return upvote
 end
 
 def check_user
@@ -37,10 +54,13 @@ def check_user
 	end	
 end
 
+stories = Hash.new
+
 begin 
-	stories = Hash.new
 	stories[:story_title] = get_story_title
-	stories[:category] = get_category
+	category = get_category
+	stories[:category] = category
+	stories[:upvote] = get_upvotes category
 end until check_user == false
 
 puts stories
