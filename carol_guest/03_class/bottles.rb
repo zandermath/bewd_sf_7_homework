@@ -3,7 +3,7 @@ while true
 	if bottles > 1
 		puts "#{bottles} bottles of beer on the wall, #{bottles} bottles of beer"
 		puts "Take one down, pass it around"
-		bottles = bottles-1
+		bottles -= 1
 	else
 		puts "One bottle of beer on the wall, one bottle of beer"
 		puts "Take it down, pass it around. No more beer on the wall."
@@ -11,6 +11,7 @@ while true
 	end
 end
 end
+
 
 while true
 puts "How many bottles?"
