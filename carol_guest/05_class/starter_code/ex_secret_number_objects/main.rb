@@ -44,7 +44,7 @@ require 'pry'
 require 'pry-byebug'
 
 # put code here print a welcome message for your user
-puts "Welcome to my game!"
+puts "Welcome to my game."
 
 # put code here ask the user for their name, and save it
 puts "What's your name?"
