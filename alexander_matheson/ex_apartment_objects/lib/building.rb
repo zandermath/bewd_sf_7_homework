@@ -7,11 +7,22 @@ class Building
 	def initialize (building_name, building_address)
 		@building_name = building_name
 		@building_address = building_address
-		@apartments = {}
+		@apartments = []
 	end
 
-	def add_apartments (apartment)
-		puts apartment
+	def view_apartments
+		puts "---------#{@name} Apartment List-------"
+		@apartments.each do |apartment|
+			puts apartment
+			puts (apartment.is_occupied? ? apartment.renter : "This apartment is vacant")
+		end
 	end
 
+	def to_s
+		"Building #{building_name} at #{building_address} has #{@apartments.count} apartments."
+	end
 end
+
+
+
+

@@ -21,7 +21,7 @@ end
 
 def get_category
 	#Get the category
-	puts "Please tell me the category of the story (ex. Adventure, Drama etc."
+	puts "Please tell me the category of the story (ex. Adventure, Drama etc.)"
 	category = gets.chomp
 	category.downcase!
 	return category
@@ -54,13 +54,23 @@ def check_user
 	end	
 end
 
-stories = Hash.new
+
+
+#Create an array
+story = []
 
 begin 
+	#Create hash for storing stories
+	stories = Hash.new
+	
+	#fill the hash
 	stories[:story_title] = get_story_title
 	category = get_category
 	stories[:category] = category
 	stories[:upvote] = get_upvotes category
+	
+	#push the hash to the array
+	story << stories
 end until check_user == false
 
-puts stories
+puts story
