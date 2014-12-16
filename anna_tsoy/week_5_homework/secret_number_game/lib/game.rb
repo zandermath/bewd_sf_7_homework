@@ -40,7 +40,8 @@ class Game
 				puts "Your guess is too low. Try again."
 			end
 		else 
-			puts "You are out of attempts. You loose!"
+			puts "Sorry #{player}, you are out of attempts. You loose!"
+			puts "The secret number is #{secret_number}"
 		end
 	end
 end
