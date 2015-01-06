@@ -13,7 +13,7 @@
 
 def get_story_title
 	#Get the Story Title
-	puts "Please tell me the title of your favorite story?"
+	puts "\nPlease tell me the title of your favorite story?"
 	story_title = gets.chomp
 	story_title.downcase!
 	return story_title
@@ -21,7 +21,7 @@ end
 
 def get_category
 	#Get the category
-	puts "Please tell me the category of the story (ex. Adventure, Drama etc.)"
+	puts "\nPlease tell me the category of the story (ex. Adventure, Drama etc.)"
 	category = gets.chomp
 	category.downcase!
 	return category
