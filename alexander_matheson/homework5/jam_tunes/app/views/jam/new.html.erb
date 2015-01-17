@@ -1,0 +1,8 @@
+<h1>New Artist</h1>
+
+<%= simple_form_for(@artist, :html => {:class => 'form-horizontal'}) do |f| %>
+ <%= f.input :name %>
+ <%= f.input :pic_url %>
+ <%= f.association :record_label %> #add this when associations are in place
+ <%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-default' %>
+<%end %>

@@ -6,10 +6,12 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+4.1.8
 
 * System dependencies
 
 * Configuration
+gem 'autoprefixer-rails', '4.0.0.1' #add this
 
 * Database creation
 
@@ -26,3 +28,5 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+*http://www.wallpapersonview.com/wallpapers/4/landscape_wonderful_nature_quality_sunset_background_picture-16.jpg
