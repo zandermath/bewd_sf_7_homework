@@ -1,22 +1,24 @@
-<div class="col-md-6 col-md-offset-2">
-<h1 style="color:#cc3333;">Create New Artist</h1>
+
+<div style="text-align:center">
+	<%= simple_form_for(@artist, html: {:class => 'form-horizontal'} ) do |f| %>
 
 <div class="well">
-<%= simple_form_for(@artist, html: {:class => 'form-horizontal'} ) do |f| %>
+	<%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Name', } %>
 
-<%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Name', } %>
+	<br/>
 
-<br/>
-
-<%= f.input :pic_url, label: false, input_html: {:class => 'form-control', placeholder: 'Artist Picture URL'} %>
-<br/>
-
-<div style="text-align:center;">
-<%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-default' %>
-</div>
+	<%= f.input :pic_url, label: false, input_html: {:class => 'form-control', placeholder: 'Artist Picture URL'} %>
+	<br/>
+	<div class="dropdown">
+		<%= f.association :record_label, label: false, input_html: {:class => 'form-control', placeholder: 'Record Label'} %>
+	</div>
+	<br/>
+	
+	<div style="text-align:center;">
+	<%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-default' %>
+	</div>
+	</div>
 
 	<% end %>
-
-
 </div>
-</div>
+

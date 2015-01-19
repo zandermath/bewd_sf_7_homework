@@ -1,0 +1,26 @@
+<div class="col-md-6 col-md-offset-2">
+
+	<%= simple_form_for(@track, html: {:class => 'form-horizontal'} ) do |f| %>
+
+<div class="well">
+	<%= f.input :title, label: false, input_html: {:class => 'form-control', placeholder: 'Track Title', } %>
+
+	<br/>
+
+	<%= f.input :track_link, label: false, input_html: {:class => 'form-control', placeholder: 'Track Link', } %>
+
+	<br/>
+
+	<div class="dropdown">
+		<%= f.association :artist, label: false, input_html: {:class => 'form-control', placeholder: 'Artist'} %>
+	</div>
+	<br/> 
+	
+	<div style="text-align:center;">
+	<%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-default' %>
+	</div>
+	</div>
+
+	<% end %>
+
+</div>

@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  get 'artists/index'
-
-  get 'artists/show'
-
-  get 'artists/new'
-
-  get 'artists/edit'
 
   #get 'jam/index'
+
+  resources :tracks
+
+  resources :record_labels
 
   resources :artists
   # The priority is based upon order of creation: first created -> highest priority.

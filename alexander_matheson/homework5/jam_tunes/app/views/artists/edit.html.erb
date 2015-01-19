@@ -1,2 +1,21 @@
-<h1>Artists#edit</h1>
-<p>Find me in app/views/artists/edit.html.erb</p>
+
+<h1 style="color: #F1F1F1; text-align: center"><%= @artist.name %></h1>
+
+<center>
+<div class="well" style="width: 650px">
+	<%= render 'form' %>
+</div>
+
+
+<ul class="list-inline" style="text-align:center">
+	<li style='text-align:center'>
+        <%= link_to "Add Record Label", new_record_label_path, :class => 'btn btn-md btn-danger' %>
+    </li>
+    <li style='text-align:center'>
+        <%= render 'home' %>
+    </li>
+    <li style='text-align:center'>
+       	<%= link_to 'Add Track', new_track_path, :class => 'btn btn-md btn-danger' %>
+    </li>
+</ul>
+</center>

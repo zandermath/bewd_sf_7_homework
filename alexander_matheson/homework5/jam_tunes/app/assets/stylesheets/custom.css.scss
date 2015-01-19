@@ -1,6 +1,57 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#test {
+#jumbocust {
+	margin-top: 0;
+	border-radius: 0;
 	background: url('http://nataliapiskova.org.ua/wp-content/uploads/2013/11/outer-space-1920x1200-hd-wallpaper.jpg') no-repeat center center;
+	background-size: cover;
+	height: 80%;
+}
+
+#navbarcust {
+	margin-bottom: 0;
+	padding: 0;
+}
+
+#tablecust {
+	background-color: white;
+}
+
+ul {
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+}
+
+ul li {
+	list-style:none;
+	margin-bottom:25px;
+	vertical-align: middle;           
+}
+
+ul li img {
+	cursor: pointer;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+th {
+	text-align:center;
+	color: #F1F1F1;
+}
+
+tr td{
+	text-align:center;
+	color: #F1F1F1;
 }

@@ -1,0 +1,15 @@
+<div class="col-md-8 col-md-offset-2">
+
+	<h1 style="color:#F1F1F1; text-align:center;">Record Labels</h1>
+
+	<div class="container-fluid">
+
+
+		<ul class="row">
+			<% @record_labels.each do |record_label| %>
+					<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> <%= link_to record_label.name, record_label_path(record_label) %> </li>
+			<% end %>
+		</ul>
+	</div>
+
+</div>

@@ -1,10 +1,46 @@
-<div class="col-md-12">
+<h1 style="text-align:center; color:#F1F1F1"><%= @artist.name %> <%= "@" unless @artist.record_label.try(:name).nil? %> <%= @artist.record_label.try(:name) %></h1>
 
-	<div class="col-md-8">
-		<h1><%= @artist.name %></h1>
+	<br/>
 
-		<%= image_tag(@artist.pic_url) %>
+	<div style="text-align:center">
+		
+		<%= image_tag(@artist.pic_url, size: "300x300") %>
 
-		<p></p>
 	</div>
-</div>
+	<br/>
+
+	<div class="table-responsive">
+		<table class="table">
+		<tr>
+		<th>Title</th>
+		<th>Track Link</th>
+		</tr>
+
+		<%= @artist.tracks.each do |track| %>
+					<tr>
+					<td> <%= track.title %> </td>
+					<td> <%= link_to track.title, track.track_link %> </td>
+					</tr>
+		<% end %>
+
+		</table>
+	</div>
+
+	<br/>
+	<br/>
+
+	<ul class="list-inline" style="text-align:center">
+
+        <li style='text-align:center'>
+        	<%= link_to "Edit", edit_artist_path(@artist), :class => 'btn btn-md btn-danger' %>
+        </li>
+        <li style='text-align:center'>
+        	<%= render 'home' %>
+        </li>
+        <li style='text-align:center'>
+        	<%= link_to 'Delete', @artist, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-md btn-danger' %>
+        </li>
+		
+	</ul>
+
+

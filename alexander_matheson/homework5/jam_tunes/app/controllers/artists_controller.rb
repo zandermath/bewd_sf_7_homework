@@ -19,6 +19,18 @@ class ArtistsController < ApplicationController
   end
 
   def edit
+    @artist = get_artist
+  end
+
+  def update
+    @artist = get_artist
+
+    if @artist.update(artist_params)
+    redirect_to @artist
+  else
+    render 'edit'
+  end
+
   end
 
   def destroy
@@ -30,7 +42,7 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
-  	params.require(:artist).permit(:name, :pic_url)
+  	params.require(:artist).permit(:name, :pic_url, :record_label_id)
   end
 
   def get_artist

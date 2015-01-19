@@ -1,0 +1,23 @@
+<h1 style="color: #F1F1F1; text-align: center">Tracks</h1>
+	<div class="table-responsive">
+		<table class="table">
+		<tr>
+		<th>Title</th>
+		<th>Track Link</th>
+		<th>Artist</th>
+		<th>Modify</th>
+		</tr>
+
+		<%= @tracks.each do |track| %>
+					<tr>
+					<td> <%= track.title %> </td>
+					<td> <%= link_to track.title, track.track_link %> </td>
+					<td> <%= track.artist.try(:name) %> </td>
+					<td> 
+					<%= link_to "Edit", edit_track_path(track), :class => 'btn btn-xs btn-danger' %>
+					<%= link_to 'Delete', track, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
+					</tr>
+		<% end %>
+
+		</table>
+	</div>

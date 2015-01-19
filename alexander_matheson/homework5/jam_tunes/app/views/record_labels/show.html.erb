@@ -1,0 +1,15 @@
+<h1 style="text-align:center; color:#F1F1F1"><%= @record_label.name %> </h1>
+
+<ul class="list-inline" style="text-align:center">
+
+        <li style='text-align:center'>
+        	<%= link_to "Edit", edit_record_label_path(@record_label), :class => 'btn btn-md btn-danger' %>
+        </li>
+        <li style='text-align:center'>
+        	<%= link_to "Record Labels", record_labels_path, :class => 'btn btn-md btn-danger' %>
+        </li>
+        <li style='text-align:center'>
+        	<%= link_to 'Delete', @record_label, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-md btn-danger' %>
+        </li>
+		
+	</ul>
