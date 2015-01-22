@@ -1,5 +1,16 @@
 <h1 style="text-align:center; color:#F1F1F1"><%= @record_label.name %> </h1>
 
+        <div class="container-fluid">
+
+
+                <ul class="row">
+                        <% @record_label.artists.each do |artist| %>
+                                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-4"> <%= link_to(image_tag(artist.pic_url, size:'200x200'), artist_path(artist)) %><%= artist.name %> </li>
+                        <% end %>
+                </ul>
+        </div>
+
+
 <ul class="list-inline" style="text-align:center">
 
         <li style='text-align:center'>

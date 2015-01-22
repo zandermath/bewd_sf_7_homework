@@ -9,8 +9,11 @@ class TracksController < ApplicationController
 
   def create
   	@track = Track.new(track_params)
-  	@track.save
-  	redirect_to artist_path(@track.artist_id)
+  	if @track.save
+      redirect_to artist_path(@track.artist_id)
+    else
+      render :new
+    end
   end
   
   def show

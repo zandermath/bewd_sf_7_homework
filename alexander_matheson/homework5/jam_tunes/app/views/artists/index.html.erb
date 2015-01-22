@@ -7,7 +7,7 @@
 
 		<ul class="row">
 			<% @artists.each do |artist| %>
-					<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> <%= link_to(image_tag(artist.pic_url, size:'200x200'), artist_path(artist)) %> </li>
+					<li class="col-lg-3 col-md-3 col-sm-3 col-xs-4"> <%= link_to(image_tag(artist.pic_url, size:'200x200'), artist_path(artist)) %> </li>
 			<% end %>
 		</ul>
 	</div>

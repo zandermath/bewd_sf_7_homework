@@ -1,4 +1,4 @@
-<h1 style="text-align:center; color:#F1F1F1"><%= @artist.name %> <%= "@" unless @artist.record_label.try(:name).nil? %> <%= @artist.record_label.try(:name) %></h1>
+<h1 style="text-align:center; color:#F1F1F1"><%= @artist.name %> <%= "@" unless @artist.record_label.try(:name).nil? %> <%= link_to(@artist.record_label.try(:name), record_label_path(@artist.record_label)) unless @artist.record_label.try(:name).nil?%></h1>
 
 	<br/>
 
@@ -20,6 +20,7 @@
 					<tr>
 					<td> <%= track.title %> </td>
 					<td> <%= link_to track.title, track.track_link %> </td>
+					<td> <%= link_to "Edit", edit_track_path(track) %>
 					</tr>
 		<% end %>
 

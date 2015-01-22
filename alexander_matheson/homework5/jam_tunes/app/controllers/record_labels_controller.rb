@@ -9,8 +9,11 @@ class RecordLabelsController < ApplicationController
 
   def create
     @record_label = RecordLabel.new(record_label_params)
-    @record_label.save
-    redirect_to record_label_path(@record_label)
+    if @record_label.save
+      redirect_to record_labels_path
+    else
+      render :new
+    end
   end
 
   def show
