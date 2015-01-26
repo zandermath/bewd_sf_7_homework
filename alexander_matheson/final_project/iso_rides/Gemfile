@@ -15,6 +15,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'bootstrap-datepicker-rails'
 
 #Testing & Debugging Tools
 group :development do
