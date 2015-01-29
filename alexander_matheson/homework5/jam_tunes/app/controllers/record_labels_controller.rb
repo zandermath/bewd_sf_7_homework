@@ -47,6 +47,6 @@ class RecordLabelsController < ApplicationController
   end
 
   def get_record_label
-    @artist = RecordLabel.find(params[:id])
+    @record_label = RecordLabel.find(params[:id])
   end
 end

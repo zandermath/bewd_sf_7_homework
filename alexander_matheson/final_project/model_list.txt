@@ -1,0 +1,5 @@
+User :description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up
+region name:string
+location_start name:string region_id:integer
+location_end name:string pic:string
+ 
