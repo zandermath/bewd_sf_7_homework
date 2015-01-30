@@ -1,5 +1,7 @@
-User :description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up
+Trip :description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up
 region name:string
 location_start name:string region_id:integer
 location_end name:string pic:string
- 
+activity name:string pic:string
+
+Resources		Associationuser		user has_many tripsregion		trip belongs_to useractivity		region has_many locations_startslocations_start		location_start belong_to regionlocation_end		location_start has_many location_endstrip		location_end has_many location_startsmessage		activity has_many location_ends		location_end has_many activitys		trip has_one location_end		trip has_one location_start		message has_many users		user has_many messages
