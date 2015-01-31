@@ -1,15 +1,15 @@
 <div id="outer">
 <div class="container-fluid" style="padding:0px; margin:0px">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	<div class="carousel-inner">
-		<div class="item active">
-        	<%= image_tag "image_sample3.jpg" %>
+  <div class="carousel-inner">
+    <div class="item active">
+          <%= image_tag "image_sample3.jpg" %>
         </div>
         <div class="item">
-        	<%= image_tag "image_sample4.jpg" %>
+          <%= image_tag "image_sample5.jpg" %>
         </div>
         <div class="item">
-        	<%= image_tag "image_sample6.jpg" %>
+          <%= image_tag "image_sample6.jpg" %>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -17,57 +17,39 @@
 </div>
     <div class="search">
         <div class="container">
-        	<div class="row">
-        	<div class="col-md-10 col-xs-8 col-md-offset-1 col-xs-offset-2">
-        	<div class="form-section">
+          <div class="row">
+          <div class="col-md-10 col-xs-8 col-md-offset-1 col-xs-offset-2">
+          <div class="form-section">
+              <%= form_tag trips_path, :method => 'get', :class => "form-search" do %>  
                 <div class="row">
-                    <form role="form">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="sr-only" for="guest">Sport</label>
-                          <select id="guest" name="guest" class="form-control">
-                              <option value="all_regions">all regions</option>
-                              <option value="sf_bay_area">San Francisco/Bay Area</option>
-                              <option value="vancouver">Vancouver/Lower Mainland</option>
-                              <option value="Barcelona">Barcelona</option>
-                          </select>
-                        </div>
-                       </div>
-                       <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="sr-only" for="guest">Sport</label>
-                          <select id="guest" name="guest" class="form-control">
-                              <option value="all_activitys">all activities</option>
-                              <option value="skiing_snowboarding">skiing and snowboarding</option>
-                              <option value="surfing">surfing</option>
-                              <option value="biking">biking</option>
-                              <option value="climbing">climbing</option>
-                              <option value="camping">camping</option>
-                          </select>
-                        </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <%= select_tag(:search, options_from_collection_for_select(Region.all, :id, :name)) %>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <%= select_tag(:search, options_from_collection_for_select(Activity.all, :id, :name)) %>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-xs-5">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <%= date_select(:search, :date_start ) %>
                       </div>
-                       <div class="col-md-2 col-xs-3">
-                       	<div class="form-group">
-                          <label class="sr-only" for="leaving">Leaving</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="checkin" placeholder="Leaving">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          </div>
-                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-xs-5">
+                    <div class="form-group">
+                      <div class="input-group date">
+                        <%= date_select :search, :date_end %>
                       </div>
-                      <div class="col-md-2 col-xs-3">
-                        <div class="form-group">
-                          <label class="sr-only" for="returning">Returning</label>
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="checkout" placeholder="Returning">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-1">
-                        <button type="submit" class="btn btn-default btn-primary">Find</button>
-                      </div>
-                    </form>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-xs-1">
+                  <%= submit_tag "Find!", :name => nil, :class => "btn btn-sm" %>
+                  </div>
+                <% end %>
                 </div>
               </div>
             </div>
@@ -78,13 +60,13 @@
 </div>
 <div id="about"> 
     <div class="col-md-8 col-md-offset-2">
-	   <div class="img-responsive">
-	     <%= image_tag "image_sample8.jpg", height: "250"%>
-	   </div>
-	   <br/>
-	   <br/>
-	   <p>Grab your board and find a ride. TripMash is a community of like minded people who just want to get out there and do what they love.</p>
-	   <br/>
-	   <br/>
-	</div>
+     <div class="img-responsive">
+       <%= image_tag "image_sample8.jpg", height: "250"%>
+     </div>
+     <br/>
+     <br/>
+     <p>Grab your board and find a ride. TripMash is a community of like minded people who just want to get out there and do what they love.</p>
+     <br/>
+     <br/>
+  </div>
 </div>

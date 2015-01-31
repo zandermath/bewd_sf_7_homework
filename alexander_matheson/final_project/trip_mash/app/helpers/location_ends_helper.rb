@@ -1,0 +1,2 @@
+module LocationEndsHelper
+end

@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-  	@trips = Trip.all
+  	@trips = @trips.search(params[:search])
   end
 
   def new
@@ -9,7 +9,7 @@ class TripsController < ApplicationController
 
   def create
   	@trip = Trip.new(trip_params)
-  	if @artist.save
+  	if @trip.save
   		redirect_to trip_path(@trip)
   	else
   		render :new
