@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   def index
-  	@trips = @trips.search(params[:search])
+    @q = Trip.ransack(params[:q])
+    @trips = @q.result
   end
 
   def new
@@ -41,7 +42,7 @@ class TripsController < ApplicationController
 
   private
   	def trip_params
-  		params.require(:trip).permit(:description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up, :location_start_id, :location_end_id, :activity_id)
+  		params.require(:trip).permit(:description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up, :location_start_id, :location_end_id, :activity_id, :region_id, :location_end, :date_range, :search_activity_id, :search_region_id)
   	end
 
   	def get_trip

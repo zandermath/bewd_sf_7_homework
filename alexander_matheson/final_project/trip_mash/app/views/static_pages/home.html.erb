@@ -15,47 +15,9 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
-    <div class="search">
-        <div class="container">
-          <div class="row">
-          <div class="col-md-10 col-xs-8 col-md-offset-1 col-xs-offset-2">
-          <div class="form-section">
-              <%= form_tag trips_path, :method => 'get', :class => "form-search" do %>  
-                <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <%= select_tag(:search, options_from_collection_for_select(Region.all, :id, :name)) %>
-                    </div>
-                  </div>
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <%= select_tag(:search, options_from_collection_for_select(Activity.all, :id, :name)) %>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-xs-5">
-                    <div class="form-group">
-                      <div class="input-group">
-                        <%= date_select(:search, :date_start ) %>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 col-xs-5">
-                    <div class="form-group">
-                      <div class="input-group date">
-                        <%= date_select :search, :date_end %>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-2 col-xs-1">
-                  <%= submit_tag "Find!", :name => nil, :class => "btn btn-sm" %>
-                  </div>
-                <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+    <%= link_to "Trips", trips_path %>
+    </div>
 </div>
 </div>
 <div id="about"> 

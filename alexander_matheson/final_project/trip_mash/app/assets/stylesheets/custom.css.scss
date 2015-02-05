@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootstrap-datetimepicker";
 
 /* -------Nav Bar Style--------- */
 .navbar {
@@ -47,3 +46,10 @@ body {
 #outer {
 	height: 700px;
 }
+
+/* -----------Trips Index Page Style------------*/
+
+.search-bar{
+  height: 100px
+}
+

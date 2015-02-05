@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: trips
+#
+#  id                :integer          not null, primary key
+#  description       :text
+#  has_car           :boolean
+#  spots             :integer
+#  cost              :decimal(, )
+#  date_start        :date
+#  date_end          :date
+#  pick_up           :boolean
+#  created_at        :datetime
+#  updated_at        :datetime
+#  location_start_id :integer
+#  location_end_id   :integer
+#  activity_id       :integer
+#  region_id         :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

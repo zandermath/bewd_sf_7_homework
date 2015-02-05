@@ -1,2 +1,38 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<div class="search-bar">
+	<div class="col-sm-12 col-md-12">
+		<%= search_form_for @q do |f| %>
+			<div class="field">
+				<%= f.collection_select :activity_id_eq, Activity.all, :id, :name, prompt: "Activty" %>
+				<%= f.collection_select :region_id_eq, Region.all, :id, :name, prompt: "Region" %>
+				<%= f.collection_select :location_end_id_eq, LocationEnd.all, :id, :name, prompt: "Destination" %>
+				<%= f.label :has_car_eq, "Car?" %>
+				<%= f.select :has_car_eq, options_for_select([['Yes', true], ['No', false]]) %>
+				<%= f.label :spots_eq, "Number of Peeps" %>
+				<%= f.number_field(:spots_eq, in: 1..10, step: 1) %>
+			</div>
+			<div class="field">
+				<%= f.label :date_start_gteq, "Leaving between" %>
+				<%= f.date_field :date_start_gteq %>
+				<%= f.label :date_start_lteq, "and" %>
+				<%= f.date_field :date_start_lteq %>
+			</div>
+			<div class="actions"><%= f.submit "Search" %></div>
+		<% end %>  
+	</div>
+</div>
+	<% @trips.each do |trip| %>
+		<div class="col-sm-6 col-md-6">
+			<div class="listing-img-sm listing-img-full">
+				<%= image_tag "#{trip.location_end.try(:pic)}" %>
+			</div>
+			<div class="info">
+				<p> 
+				<%= trip.description %> |
+				<%= trip.has_car %> |
+				<%= trip.cost %>
+				</p>
+			</div>
+		</div>	
+	<% end %>
+</div>
+		
