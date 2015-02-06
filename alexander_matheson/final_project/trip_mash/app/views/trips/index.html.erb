@@ -21,18 +21,12 @@
 	</div>
 </div>
 	<% @trips.each do |trip| %>
-		<div class="col-sm-6 col-md-6">
-			<div class="listing-img-sm listing-img-full">
+		<% if trip.date_start.future? %>
 				<%= image_tag "#{trip.location_end.try(:pic)}" %>
-			</div>
-			<div class="info">
-				<p> 
 				<%= trip.description %> |
 				<%= trip.has_car %> |
 				<%= trip.cost %>
-				</p>
-			</div>
-		</div>	
+			<% end %>
 	<% end %>
 </div>
 		

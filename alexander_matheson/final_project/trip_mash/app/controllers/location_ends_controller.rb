@@ -18,7 +18,7 @@ class LocationEndsController < ApplicationController
 
   private
   	def location_end_params
-  		params.require(:location_end).permit(:name, :pic)
+  		params.require(:location_end).permit(:name, :image)
   	end
 
 end

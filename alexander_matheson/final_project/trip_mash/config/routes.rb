@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
+  resources :users, :only => [:show]
+
   get 'activitys/index'
 
   get 'activitys/new'

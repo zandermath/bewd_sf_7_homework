@@ -25,6 +25,7 @@ class Trip < ActiveRecord::Base
 	belongs_to :location_start
 	belongs_to :user
 	belongs_to :region
+	belongs_to :trip
 
 	# call the concern module filterable for trip model search
 	#include Filterable
