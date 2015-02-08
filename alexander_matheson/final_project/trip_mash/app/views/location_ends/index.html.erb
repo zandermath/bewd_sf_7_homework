@@ -1,4 +1,5 @@
-<%= @location_ends.each do |location| %>
-	<%= location. %>
-	<%= location.name %>
+<h1>Destinations</h1>
+<%= @location_ends.each do |destination| %>
+	<%= destination.name %>
+	<%= image_tag attachment_url(destination, :image, :fill, 150, 150) %>
 <% end %>

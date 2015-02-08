@@ -1,2 +1,5 @@
-<h1>Activitys#index</h1>
-<p>Find me in app/views/activitys/index.html.erb</p>
+<h1>Activities</h1>
+<%= @activitys.each do |activity| %>
+	<%= activty.name %>
+	<%= image_tag attachment_url(activity, :image, :fill, 15, 15) %>
+<% end %>

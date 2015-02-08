@@ -20,6 +20,7 @@ gem 'devise'
 gem 'omniauth', '~> 1.2.2'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
+gem 'geocoder'
 
 #Testing & Debugging Tools
 group :development do

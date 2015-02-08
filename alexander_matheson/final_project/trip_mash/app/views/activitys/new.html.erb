@@ -1,2 +1,12 @@
-<h1>Activitys#new</h1>
-<p>Find me in app/views/activitys/new.html.erb</p>
+
+<% if current_user.admin? %>
+	<%= form_for(@activity) do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.attachment_field :image %>
+
+	<%= f.submit %>
+	<% end %>
+<% end %>

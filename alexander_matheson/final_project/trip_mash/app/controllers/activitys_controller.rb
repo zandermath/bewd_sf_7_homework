@@ -10,7 +10,7 @@ class ActivitysController < ApplicationController
   def create
   @activity = Activity.new(activity_params)
   	if @activity.save
-  		redirect_to trips_path
+  		redirect_to activitys_path
   	else
   		render :new
   	end
@@ -18,7 +18,7 @@ class ActivitysController < ApplicationController
 
   private
   	def activity_params
-  		params.require(:activity).permit(:name, :pic)
+  		params.require(:activity).permit(:name, :pic, :image)
   	end
 
 end

@@ -7,6 +7,10 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :first_name, required: true, autofocus: true %>
     <%= f.input :last_name, required: false, autofocus: true %>
+    <%= f.input :description, required: false, autofocus: true %>
+    <%= f.input :age, required: false, autofocus: true %>
+    <%= f.input :home_town, required: false, autofocus: true %>
+    <%= f.attachment_field :image, required: false, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

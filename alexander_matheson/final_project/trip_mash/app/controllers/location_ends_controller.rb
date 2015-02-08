@@ -10,15 +10,22 @@ class LocationEndsController < ApplicationController
   def create
   @location_end = LocationEnd.new(location_end_params)
   	if @location_end.save
-  		redirect_to trips_path
+  		redirect_to user_path(current_user)
   	else
   		render :new
   	end
   end
 
+  def show
+    @location_end = get_location_end
+  end
+
   private
   	def location_end_params
-  		params.require(:location_end).permit(:name, :image)
+  		params.require(:location_end).permit(:name, :pic, :image)
   	end
 
+    def get_location_end
+      @location_end = LocationEnd.find(params[:id])
+    end
 end

@@ -27,6 +27,14 @@ class Trip < ActiveRecord::Base
 	belongs_to :region
 	belongs_to :trip
 
+	#geocoding methods
+	geocoded_by :address
+	after_validation :geocode, :if => :address_changed?
+
+	# when using image magick only refer to column in the database as :image
+	# and not as image_id
+	attachment :image
+
 	# call the concern module filterable for trip model search
 	#include Filterable
  def self.search_by_activity_and_region(activity_id, region_id)

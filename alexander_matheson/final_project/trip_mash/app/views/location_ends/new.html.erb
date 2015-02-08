@@ -1,0 +1,15 @@
+<div class="container-fluid">
+	<div class="form-container square">
+		<% if current_user.admin? %>
+			<%= form_for(@location_end) do |f| %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.attachment_field :image %>
+
+			<%= f.submit %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

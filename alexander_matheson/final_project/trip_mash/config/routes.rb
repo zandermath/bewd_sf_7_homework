@@ -4,11 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, :only => [:show]
 
-  get 'activitys/index'
-
-  get 'activitys/new'
-
-  get 'activitys/show'
+  resources :activitys
 
   resources :location_ends
   resources :location_starts
