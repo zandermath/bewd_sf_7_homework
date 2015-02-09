@@ -150,8 +150,37 @@ body {
 /* -----------Trips Index Page Style------------*/
 /* ---------------------------------------------*/
 
+.push{
+  padding: 0px !important;
+}
+
 .search-bar{
-  height: 100px
+  z-index: 10;
+  background-color: #ecf0f1;
+  margin-top: 50px;
+  padding: 8px;
+  height: 100px;
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+div.trip-listing-container {
+  z-index: 10;
+  background-color: #ecf0f1;
+  padding: 8px;
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+div.separating-bar{
+  height: 5px;
+  background-color: #bdc3c7;
 }
 
 /* -------------Footer---------------*/

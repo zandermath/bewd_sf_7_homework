@@ -6,9 +6,7 @@
 	<div class="dropdown">
 		<%= f.association :activity, label: 'Activity', input_html: {:class => 'form-control'} %>
 	</div>
-	<div class="dropdown">
-		<%= f.input :address, label: 'Start Location', input_html: {:class => 'form-control'} %>
-	</div>
+		<%= f.input :address, :input_html =>{:id => 'trip_address'}, :placeholder => 'Where are you leaving from?' %>
 	<div class="dropdown">
 		<%= f.association :location_end, label: 'Destination', input_html: {:class => 'form-control', placeholder: 'Destination'} %>
 	</div>
@@ -63,5 +61,3 @@
 
 	<% end %>
 </div>
-
-<!-- :has_car, :spots, :cost, :date_start, :date_end, -->

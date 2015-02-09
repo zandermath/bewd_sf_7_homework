@@ -2,6 +2,11 @@ class TripsController < ApplicationController
   def index
     @q = Trip.ransack(params[:q])
     @trips = @q.result
+    @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
+      marker.lat trip.latitude
+      marker.lng trip.longitude
+      marker.infowindow trip.description
+    end
   end
 
   def new

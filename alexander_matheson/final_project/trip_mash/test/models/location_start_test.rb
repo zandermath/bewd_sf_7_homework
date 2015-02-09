@@ -7,6 +7,9 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  region_id  :integer
+#  latitude   :float
+#  longitude  :float
+#  address    :string(255)
 #
 
 require 'test_helper'

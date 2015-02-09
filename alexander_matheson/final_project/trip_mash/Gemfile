@@ -21,6 +21,8 @@ gem 'omniauth', '~> 1.2.2'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 gem 'geocoder'
+gem 'jquery-turbolinks'
+gem 'gmaps4rails'
 
 #Testing & Debugging Tools
 group :development do

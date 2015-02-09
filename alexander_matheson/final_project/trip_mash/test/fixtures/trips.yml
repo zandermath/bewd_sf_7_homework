@@ -16,6 +16,11 @@
 #  location_end_id   :integer
 #  activity_id       :integer
 #  region_id         :integer
+#  user_id           :integer
+#  address           :string(255)
+#  latitude          :float
+#  longitude         :float
+#  image_id          :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

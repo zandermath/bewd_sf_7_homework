@@ -16,6 +16,11 @@
 #  location_end_id   :integer
 #  activity_id       :integer
 #  region_id         :integer
+#  user_id           :integer
+#  address           :string(255)
+#  latitude          :float
+#  longitude         :float
+#  image_id          :string(255)
 #
 
 class Trip < ActiveRecord::Base
@@ -35,9 +40,4 @@ class Trip < ActiveRecord::Base
 	# and not as image_id
 	attachment :image
 
-	# call the concern module filterable for trip model search
-	#include Filterable
- def self.search_by_activity_and_region(activity_id, region_id)
- 	Trip.where(activity_id:activity_id.to_i, region_id: region_id.to_i) #this will return an array of objects
- end
 end
