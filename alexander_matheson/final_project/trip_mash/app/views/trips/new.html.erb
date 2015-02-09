@@ -8,5 +8,20 @@
 			<ul class="list-inline" style="text-align:center">
 		    </ul>
 		</div>
+		<div class="col-md-7">
+			<h2 class="white form-title">Some Past Trips</h2>
+			<ul class="row list-unstyled">
+			<% Trip.where(nil).each do |trip| %>
+					<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+						<div class="trip-image">
+						<%= attachment_image_tag(trip, :image, :fill, 300, 300, fallback: "default.png") %>
+						</div>
+						<div class="trip-description">
+						<%= trip.description %>
+						</div>
+					</li>
+			<% end %>
+		</ul>
+		</div>
 	</div>
 </div>

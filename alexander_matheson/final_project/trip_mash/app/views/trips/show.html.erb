@@ -1,4 +1,7 @@
 <h1><%= @trip.location_end.try(:name) %></h1>
-<span><%= image_tag attachment_url(@trip, :image, :fill, 200, 200) %></span>
+<div class="user-image">
+   <span><%= image_tag attachment_url(@trip, :image, :fill, 200, 200) %></span>
+</div>
+<%= image_tag attachment_url(@trip, :image) %>
 <p><%= @trip.location_end.try(:name) %></p>
 <p><%= @trip.description %></p>
