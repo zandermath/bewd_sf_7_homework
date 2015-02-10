@@ -331,6 +331,11 @@ div.user-menu div.user-menu-content:not(.active){
 
 /* -- Custom classes for the snippet, won't effect any existing bootstrap classes of your site, but can be reused. -- */
 
+.stats h4 {
+  color: #7f8c8d;
+  font-size: .5em;
+}
+
 .user-pad {
     padding: 20px 25px;
 }
@@ -438,7 +443,7 @@ div.user-menu div.user-menu-content:not(.active){
 
 .form-container{
   background-color: #ecf0f1;
-  margin-top: 50px;
+  margin-top: 75px;
   opacity: 0.97;
   filter: alpha(opacity=97);
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
@@ -448,3 +453,13 @@ div.user-menu div.user-menu-content:not(.active){
 .form-title{
   text-align: center;
 }
+
+.form-container-devise{
+  background-color: #ecf0f1;
+  margin-top: 75px;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+

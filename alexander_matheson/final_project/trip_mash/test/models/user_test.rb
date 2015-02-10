@@ -22,6 +22,7 @@
 #  age                    :integer
 #  home_town              :string(255)
 #  admin                  :boolean          default(FALSE)
+#  current_location       :string(255)
 #
 
 require 'test_helper'

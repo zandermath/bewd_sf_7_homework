@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 #Core Management
 gem 'rails', '4.1.8' #maybe 4.2.0
 gem 'sqlite3' #maybe 'pg'
+gem 'devise'
+gem 'omniauth', '~> 1.2.2'
 
 #Front End Management
 gem 'sass-rails'
@@ -16,13 +18,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'ransack'
-gem 'devise'
-gem 'omniauth', '~> 1.2.2'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 gem 'geocoder'
 gem 'jquery-turbolinks'
 gem 'gmaps4rails'
+gem 'will_paginate', '~> 3.0.6'
 
 #Testing & Debugging Tools
 group :development do

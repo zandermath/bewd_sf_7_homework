@@ -1,3 +1,5 @@
+<div class="container-fluid">
+<div class="form-container-devise square">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -9,7 +11,8 @@
     <%= f.input :last_name, required: false, autofocus: true %>
     <%= f.input :description, required: false, autofocus: true %>
     <%= f.input :age, required: false, autofocus: true %>
-    <%= f.input :home_town, required: false, autofocus: true %>
+    <%= f.input :home_town, required: false, autofocus: true, :input_html =>{:id => 'home_town'}, :placeholder => 'Home Town' %>
+    <%= f.input :current_location, :input_html =>{:id => 'current_location'}, :placeholder => 'Current Location' %>
     <%= f.attachment_field :image, required: false, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -31,3 +34,5 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
+</div>
