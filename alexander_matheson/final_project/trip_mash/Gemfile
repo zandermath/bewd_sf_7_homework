@@ -24,6 +24,7 @@ gem 'geocoder'
 gem 'jquery-turbolinks'
 gem 'gmaps4rails'
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 #Testing & Debugging Tools
 group :development do

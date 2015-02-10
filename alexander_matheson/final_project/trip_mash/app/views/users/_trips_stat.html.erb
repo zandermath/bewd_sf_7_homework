@@ -1,6 +1,5 @@
 <% @user ||= current_user %>
-<div class="stats-follow">
-  <a href="<%= followers_user_path(@user) %>">
+<div class="stats-follow black">
     <strong id="followers" class="stat">
       <%= @user.trips.count %>
     </strong>

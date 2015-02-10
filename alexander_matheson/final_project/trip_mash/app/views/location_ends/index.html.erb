@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <div class="form-container-devise square">
 <h1>Destinations</h1>
-<%= @location_ends.each do |destination| %>
+<% @location_ends.each do |destination| %>
 	<%= destination.name %>
 	<%= attachment_image_tag(destination, :image, :fill, 300, 300, fallback: "default.png") %>
 <% end %>

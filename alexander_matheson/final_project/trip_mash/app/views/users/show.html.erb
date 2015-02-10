@@ -4,7 +4,7 @@
             <div class="row coralbg black">
                 <div class="col-md-4 no-pad">
                     	<div class="user-image">
-                        <span><%= image_tag attachment_url(@user, :image, :fill, 200, 200) %></span>
+                        <span><%= attachment_image_tag(@user, :image, :fill, 200, 200, fallback: "default_profile_image.png") %></span>
                     	</div>
                     <div class="user-pad">
                         <h3><%= @user.first_name %></h3>
@@ -45,24 +45,15 @@
                 </div>
             </div>
         </div>
+        <% if @user == current_user %>
         <div class="col-md-4 user-menu user-pad">
             <div class="user-menu-content active">
                 <h3>
-                    Recent Interactions
+                    Following
                 </h3>
                 <ul class="user-menu-list">
                     <li>
-                        <h4><i class="fa fa-user coral"></i> Roselynn Smith followed you.</h4>
-                    </li>
-                    <li>
-                        <h4><i class="fa fa-heart-o coral"></i> Jonathan Hawkins followed you.</h4>
-                    </li>
-                    <li>
-                        <h4><i class="fa fa-paper-plane-o coral"></i> Gracie Jenkins followed you.</h4>
-                    </li>
-                    <li>
-                        <button type="button" class="btn btn-labeled btn-success" href="#">
-                            <span class="btn-label"><i class="fa fa-bell-o"></i></span>View all activity</button>
+                        <h4><i class="fa fa-user coral"></i><%= render 'show_following' %></h4>
                     </li>
                 </ul>
             </div>
@@ -147,16 +138,16 @@
         <div class="col-md-1 user-menu-btns">
             <div class="btn-group-vertical square" id="responsive">
                 <a href="#" class="btn btn-block btn-default active">
-                  <i class="fa fa-bell-o fa-3x"></i>
+                  <i class="fa fa-user fa-3x"></i>
+                </a>
+                <a href="#" class="btn btn-default">
+                  <i class="fa fa-users fa-3x"></i>
                 </a>
                 <a href="#" class="btn btn-default">
                   <i class="fa fa-envelope-o fa-3x"></i>
                 </a>
                 <a href="#" class="btn btn-default">
-                  <i class="fa fa-laptop fa-3x"></i>
-                </a>
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-cloud-upload fa-3x"></i>
+                  <i class="fa fa-fire fa-3x"></i>
                 </a>
             </div>
         </div>
@@ -170,6 +161,18 @@
 		<li class="list-group"><%= link_to "Add Region", new_region_path, :class => "white" %></li>
 	</ul>
 	</div>
+    <% end %>
+<% else %>
+    <div>
+    <h1>Following</h1>
+    <%= render 'show_following' %>
+    </div>
+
+    <div>
+    <h1>Follower</h1>
+    <%= render 'show_followers' %>
+    </div>
+
 <% end %>
 </div>
 

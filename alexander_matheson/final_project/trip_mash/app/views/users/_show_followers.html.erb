@@ -1,0 +1,4 @@
+  <% @user.followers.where(nil).each do |follower| %>
+  <%= attachment_image_tag(follower, :image, :fill, 35, 35) %>
+  <%= follower.first_name %>
+  <% end %>

@@ -1,0 +1,4 @@
+  <% @user.following.where(nil).each do |following| %>
+  <%= attachment_image_tag(following, :image, :fill, 35, 35) %>
+  <%= link_to following.first_name, user_path(following) %>
+  <% end %>

@@ -2,6 +2,7 @@ class TripsController < ApplicationController
   def index
     @q = Trip.ransack(params[:q])
     @trips = @q.result
+    @trips = Trip.paginate(:page => params[:page], :per_page => 6)
     @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
       marker.lat trip.latitude
       marker.lng trip.longitude
@@ -48,7 +49,7 @@ class TripsController < ApplicationController
 
   private
   	def trip_params
-  		params.require(:trip).permit(:description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up, :location_start_id, :location_end_id, :activity_id, :region_id, :location_end, :date_range, :search_activity_id, :search_region_id, :user_id, :address, :latitude, :longitude)
+  		params.require(:trip).permit(:description, :has_car, :spots, :cost, :date_start, :date_end, :pick_up, :location_start_id, :location_end_id, :activity_id, :region_id, :location_end, :date_range, :search_activity_id, :search_region_id, :user_id, :address, :latitude, :longitude, :image)
   	end
 
   	def get_trip
