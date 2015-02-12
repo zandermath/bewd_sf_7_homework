@@ -1,11 +1,45 @@
 <div class="container-fluid">
-<div class="form-container-devise square">
-<h1><%= @trip.location_end.try(:name) %></h1>
-<div class="user-image">
-   <span><%= image_tag attachment_url(@trip, :image, :fill, 200, 200) %></span>
-</div>
-<%= image_tag attachment_url(@trip, :image) %>
-<p><%= @trip.location_end.try(:name) %></p>
-<p><%= @trip.description %></p>
-</div>
+	<div class="form-container-devise square">
+		<div class="row trip-listing-container">
+		<h1><%= @trip.location_end.try(:name) %></h1>
+		<div class="col-md-4">
+		   <span><%= image_tag attachment_url(@trip, :image, :fill, 300, 300) %></span>
+		</div>
+		<div class="col-md-8">
+			<ul class="list-inline list-unstyled">
+			<li><%= image_tag attachment_url(@trip.user, :image, :fill, 40, 40) %></li>
+			<li><h2><%= @trip.user.try(:name) %></h2></li>
+			</ul>
+			<div class="pull-right">
+			<%= link_to 'Join Trip', new_message_path, class: 'btn btn-lg btn-primary' %>
+			</div>
+			<p>Trip to <%= @trip.location_end.try(:name) %>
+			<% if @trip.date_start == @trip.date_end %>
+			 on <%= @trip.date_start %></p>
+			<% else %>
+			 leaving on <%= @trip.date_start %> returning on <%= @trip.date_end %></p>
+			<% end %>
+			<p><%= @trip.description %></p>
+			<ul class="list-inline list-unstyled">
+				<li>
+					<% if @trip.has_car %>
+						<span><i class="fa fa-car"></i> car</span>
+					<% else %>
+						<span><i class="fa fa-street-view"></i> no car</span>
+					<% end %>
+				</li>
+				<li>
+					<span><i class="fa fa-usd"></i><%= @trip.cost %></span>
+				</li>
+				<% if @trip.spots %>
+				<li>
+				<span><%= render 'trips/spots' %> spots</span>
+				</li>
+				<% end %>
+				<li>
+				<span>leaving from <i class="fa fa-map-marker"></i> <%= @trip.address %></span>
+			</ul>
+		</div>
+		</div>
+	</div>
 </div>

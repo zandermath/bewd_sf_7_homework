@@ -1,0 +1,5 @@
+<% conversation.participants.each do |participant| %>
+  <% unless participant == current_user %>
+    <%= image_tag attachment_url(participant, :image, :fill, 60, 60) %>
+  <% end %>
+<% end %>

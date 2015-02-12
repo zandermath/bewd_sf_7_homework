@@ -23,6 +23,8 @@
 #  home_town              :string(255)
 #  admin                  :boolean          default(FALSE)
 #  current_location       :string(255)
+#  latitude               :float
+#  longitude              :float
 #
 
 class User < ActiveRecord::Base
@@ -44,6 +46,17 @@ class User < ActiveRecord::Base
   #geocoding to user location
   geocoded_by :current_location
   after_validation :geocode, :if => :home_town_changed?
+
+  #for mailboxer
+  acts_as_messageable
+
+  def name
+    first_name
+  end
+
+  def mailboxer_email(object)
+    email
+  end
 
   # Follows a user.
   def follow(other_user)

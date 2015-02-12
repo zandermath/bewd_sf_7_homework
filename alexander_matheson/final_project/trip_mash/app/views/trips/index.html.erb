@@ -2,25 +2,7 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
 <div class="container-fluid push">
-<div class="search-bar">
-	<div class="col-sm-12 col-md-12">
-		<%= search_form_for @q do |f| %>
-			<div class="field">
-				<%= f.collection_select :activity_id_eq, Activity.all, :id, :name, prompt: "Activty" %>
-				<%= f.collection_select :location_end_id_eq, LocationEnd.all, :id, :name, prompt: "Destination" %>
-				<%= f.label :has_car_eq, "Car?" %>
-				<%= f.select :has_car_eq, options_for_select([['Yes', true], ['No', false]]) %>
-				<%= f.label :spots_eq, "Number of Peeps" %>
-				<%= f.number_field(:spots_eq, in: 1..10, step: 1) %>
-				<%= f.label :date_start_gteq, "Leaving between" %>
-				<%= f.date_field :date_start_gteq %>
-				<%= f.label :date_start_lteq, "and" %>
-				<%= f.date_field :date_start_lteq %>
-				<div class="actions"><%= f.submit "Search" %></div>
-			</div>
-		<% end %>  
-	</div>
-</div>
+<%= render 'trips/search' %>
 <div class="row separating-bar"></div>
 <div class="col-md-6">
 	<% @trips.each do |trip| %>
@@ -28,7 +10,7 @@
 			<div class="row trip-listing-container">
       			<div class="col-md-4">
 					<%= image_tag attachment_url(trip, :image, :fill, 100, 100) %>
-					<%= trip.user.try(:first_name) %>
+					<%= link_to trip.user.try(:first_name), user_path(trip.user) %>
 				</div>
 				<div class"col-md-8">
 					<%= trip.description %>
@@ -45,7 +27,7 @@
 						</li>
 					</ul>
 					<ul class="list-inline list-unstyled">
-  						<li><span><i class="glyphicon glyphicon-calendar"></i><%= trip.created_at %></span></li>
+  						<li><span><i class="glyphicon glyphicon-calendar"></i><%= trip.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span></li>
             			<li>|</li>
             			<span><i class="glyphicon glyphicon-comment"></i> 2 comments</span>
             			<li>|</li>
@@ -58,9 +40,7 @@
             			</li>
             			<li>|</li>
             			<li>
-			            	<span><i class="fa fa-facebook-square"></i></span>
-			            	<span><i class="fa fa-twitter-square"></i></span>
-			            	<span><i class="fa fa-google-plus-square"></i></span>
+			            	<%= link_to "More Info", trip_path(trip) %>
 			            </li>
 					</ul>
 				</div>

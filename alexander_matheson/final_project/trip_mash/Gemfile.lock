@@ -47,6 +47,11 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -71,6 +76,8 @@ GEM
     execjs (2.2.2)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
+    foreigner (1.7.2)
+      activerecord (>= 3.0.0)
     geocoder (1.2.7)
     gmaps4rails (2.1.2)
     hashie (3.4.0)
@@ -88,6 +95,10 @@ GEM
     json (1.8.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailboxer (0.12.5)
+      carrierwave (>= 0.5.8)
+      foreigner (>= 0.9.1)
+      rails (>= 3.2.0)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_magick (4.0.3)
@@ -202,6 +213,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-turbolinks
+  mailboxer
   mini_magick
   omniauth (~> 1.2.2)
   pry

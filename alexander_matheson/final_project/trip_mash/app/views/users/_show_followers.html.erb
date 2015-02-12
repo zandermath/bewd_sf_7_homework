@@ -1,4 +1,6 @@
   <% @user.followers.where(nil).each do |follower| %>
-  <%= attachment_image_tag(follower, :image, :fill, 35, 35) %>
-  <%= follower.first_name %>
+  <ul class="list-unstyled">
+  <li><%= attachment_image_tag(follower, :image, :fill, 45, 45) %></li>
+  <li><p class="black small"><%= follower.first_name %></p></li>
+  </ul>
   <% end %>

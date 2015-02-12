@@ -1,0 +1,19 @@
+<div class="search-bar">
+	<div class="col-sm-12 col-md-12">
+		<%= search_form_for @q do |f| %>
+			<div class="field">
+				<%= f.collection_select :activity_id_eq, Activity.all, :id, :name, prompt: "Activty" %>
+				<%= f.collection_select :location_end_id_eq, LocationEnd.all, :id, :name, prompt: "Destination" %>
+				<%= f.label :has_car_eq, "Car?" %>
+				<%= f.select :has_car_eq, options_for_select([['Yes', true], ['No', false]]) %>
+				<%= f.label :spots_eq, "Number of Peeps" %>
+				<%= f.number_field(:spots_eq, in: 1..10, step: 1) %>
+				<%= f.label :date_start_gteq, "Leaving between" %>
+				<%= f.date_field :date_start_gteq %>
+				<%= f.label :date_start_lteq, "and" %>
+				<%= f.date_field :date_start_lteq %>
+				<div class="actions"><%= f.submit "Search" %></div>
+			</div>
+		<% end %>  
+	</div>
+</div>
