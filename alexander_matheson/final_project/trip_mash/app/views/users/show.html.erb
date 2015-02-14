@@ -105,7 +105,7 @@
                         </div>
                         <div class="info">
                             <p class="small" style="text-overflow: ellipsis">An Awesome Title</p>
-                            <p class="small coral text-right"><i class="fa fa-clock-o"></i> Posted Today | 10:42 A.M.</small>
+                            <p class="small coral text-right"><i class="fa fa-clock-o"></i> Posted Today | 10:42 A.M.</p>
                         </div>
                         <div class="stats turqbg">
                             <span class="fa fa-heart-o"> <strong>47</strong></span>
@@ -148,10 +148,13 @@
 		<li class="list-group"><%= link_to "Add Activity", new_activity_path, :class => "white" %></li>
 		<li class="list-group"><%= link_to "Add Destination", new_location_end_path, :class => "white" %></li>
 		<li class="list-group"><%= link_to "Add Region", new_region_path, :class => "white" %></li>
+        <li class="list-group"><%= link_to "View Users", users_path, :class => "white" %></li>
 	</ul>
 	</div>
     <% end %>
+    </div>
 <% else %>
+    <div class="col-md-5">
     <div>
     <h1>Following</h1>
     <%= render 'show_following' %>
@@ -163,5 +166,6 @@
     </div>
 
 <% end %>
+</div>
 </div>
 

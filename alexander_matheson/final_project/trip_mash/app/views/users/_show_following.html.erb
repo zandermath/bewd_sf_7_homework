@@ -1,6 +1,6 @@
-  <% @user.following.where(nil).each do |following| %>
-  <ul class="list-unstyled">
-  <li><%= attachment_image_tag(following, :image, :fill, 45, 45) %></li>
-  <li><p class="black small"><%= link_to following.first_name, user_path(following) %></p></li>
-  </ul>
+  <ul class="row list-unstyled">
+  <% @user.following.where(nil).limit(20).each do |following| %>
+  <li class="col-md-1"><%= link_to (attachment_image_tag(following, :image, :fill, 50, 50)), user_path(following) %>
+  </li>
   <% end %>
+  </ul>

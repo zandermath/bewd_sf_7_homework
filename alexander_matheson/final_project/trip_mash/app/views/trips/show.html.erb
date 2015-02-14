@@ -43,7 +43,7 @@
 			</ul>
 		</div>
 		<ul>
-		<% if current_user %>
+		<% if current_user == @trip.user %>
 			<%= link_to "Edit Trip", edit_trip_path, class: "btn btn-danger" %>
 		<% end %>
 		</ul>
