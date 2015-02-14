@@ -1,6 +1,6 @@
   <% @user.followers.where(nil).each do |follower| %>
   <ul class="list-unstyled">
   <li><%= attachment_image_tag(follower, :image, :fill, 45, 45) %></li>
-  <li><p class="black small"><%= follower.first_name %></p></li>
+  <li><p class="black small"><%= link_to follower.first_name, user_path(follower) %></p></li>
   </ul>
   <% end %>

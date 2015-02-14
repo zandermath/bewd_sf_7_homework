@@ -33,9 +33,7 @@ class Trip < ActiveRecord::Base
 	belongs_to :trip
 
 	validates :address, presence: true
-	validates :activity_id, presence: true
 	validates :description, presence: true
-	validates :spots, presence: true
 	validates :date_start, presence: true
 	validates :date_end, presence: true
 

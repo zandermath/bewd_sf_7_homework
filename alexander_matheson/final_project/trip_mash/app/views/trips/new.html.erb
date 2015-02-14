@@ -14,7 +14,7 @@
 			<% Trip.where(nil).each do |trip| %>
 					<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
 						<div class="trip-image">
-						<%= attachment_image_tag(trip, :image, :fill, 300, 300, fallback: "default.png") %>
+						<%= attachment_image_tag(trip, :image, :fill, 300, 300, fallback: "logo2.png") %>
 						</div>
 						<div class="trip-description">
 						<%= trip.description %>

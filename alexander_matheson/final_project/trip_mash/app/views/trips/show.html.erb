@@ -7,12 +7,14 @@
 		</div>
 		<div class="col-md-8">
 			<ul class="list-inline list-unstyled">
-			<li><%= image_tag attachment_url(@trip.user, :image, :fill, 40, 40) %></li>
+			<li><%= image_tag attachment_url(@trip.user, :image, :fill, 50, 50) %></li>
 			<li><h2><%= @trip.user.try(:name) %></h2></li>
 			</ul>
+			<% if @trip.user != current_user %>
 			<div class="pull-right">
 			<%= link_to 'Join Trip', new_message_path, class: 'btn btn-lg btn-primary' %>
 			</div>
+			<% end %>
 			<p>Trip to <%= @trip.location_end.try(:name) %>
 			<% if @trip.date_start == @trip.date_end %>
 			 on <%= @trip.date_start %></p>
@@ -40,6 +42,11 @@
 				<span>leaving from <i class="fa fa-map-marker"></i> <%= @trip.address %></span>
 			</ul>
 		</div>
+		<ul>
+		<% if current_user %>
+			<%= link_to "Edit Trip", edit_trip_path, class: "btn btn-danger" %>
+		<% end %>
+		</ul>
 		</div>
 	</div>
 </div>
